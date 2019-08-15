@@ -16,5 +16,5 @@ jobs:
         SOURCE_BRANCH: "feature-1"
         DESTINATION_BRANCH: "master"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        args: '-m "Pulling $SOURCE_BRANCH into $DESTINATION_BRANCH"'
+      with:
+        args: '-m "Pull $SOURCE_BRANCH into $DESTINATION_BRANCH"'
