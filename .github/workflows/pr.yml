@@ -1,22 +1,21 @@
 on:
   push:
-    branches:     # Matching branch pattern
-    - feature/*
-    - feature*
-    - feature-1
+    branches:
+    - "feature*"  # Support wildcard matching
 
 jobs:
   pull-request:
     runs-on: ubuntu-latest
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
     - uses: actions/checkout@master
     - name: repo-sync
       uses: wei/pull-request@master
       env:
-        DESTINATION_BRANCH: "master"
-        PR_TITLE: "Pulling ${{ github.ref }} into master"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DESTINATION_BRANCH: "master"
+        SOURCE_BRANCH: ""  # Optional, default is the branch that triggered action
+        PR_TITLE: "Pulling ${{ github.ref }} into master"
+        PR_BODY: ":crown: *This is an automated PR*"  # Full markdown support
+        PR_REVIEWER: "wei,worker"    # Comma-separated list (no spaces)
+        PR_ASSIGNEE: "wei,worker"    # Comma-separated list (no spaces)
+        PR_LABEL: "auto-pr"          # Comma-separated list (no spaces)
