@@ -16,7 +16,7 @@ jobs:
         SOURCE_BRANCH: ""  # Optional, default is the branch that triggered action
         PR_TITLE: "Pulling ${{ github.ref }} into master"
         PR_BODY: ":crown: *This is an automated PR*"  # Full markdown support
-        PR_REVIEWER: "wei,worker"    # Comma-separated list (no spaces)
-        PR_ASSIGNEE: "wei,worker"    # Comma-separated list (no spaces)
+        PR_REVIEWER: "wei"    # Comma-separated list (no spaces)
+        PR_ASSIGNEE: "wei"    # Comma-separated list (no spaces)
         PR_LABEL: "auto-pr"          # Comma-separated list (no spaces)
         HUB_VERBOSE: "1"             # Enable hub logging
