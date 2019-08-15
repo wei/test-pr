@@ -9,11 +9,14 @@ jobs:
   pull-request:
     runs-on: ubuntu-latest
     steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
     - uses: actions/checkout@master
     - name: repo-sync
       uses: wei/pull-request@master
       env:
         DESTINATION_BRANCH: "master"
+        PR_TITLE: "Pulling f into master"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        args: '-m "Pull f into master"'
