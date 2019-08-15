@@ -2,6 +2,8 @@ on:
   push:
     branches:     # Matching branch pattern
     - feature/*
+    - feature*
+    - feature-1
 
 jobs:
   pull-request:
