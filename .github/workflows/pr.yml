@@ -15,5 +15,5 @@ jobs:
       env:
         DESTINATION_BRANCH: "master"
         PR_TITLE: "Pulling ${{ github.ref }} into master"
-        PR_BODY: "OK\n*THIS IS BOLD*, [STARR](\"https://google.com\")"
+        PR_BODY: "OK\n*THIS IS BOLD*, [Google, Inc.](\"https://google.com\")"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
