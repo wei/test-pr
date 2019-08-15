@@ -18,5 +18,5 @@ jobs:
       uses: wei/pull-request@master
       env:
         DESTINATION_BRANCH: "master"
-        PR_TITLE: "Pulling f into master"
+        PR_TITLE: "Pulling ${{ github.ref }} into master"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
