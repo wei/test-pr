@@ -1,3 +1,3 @@
 # test-pr
 
-- feature2.5
+- feature2.6
