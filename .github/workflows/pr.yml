@@ -1,7 +1,7 @@
 on:
   push:
-    paths:     # Matching branch pattern
-      - feature/*
+    branches:     # Matching branch pattern
+    - feature/*
 
 jobs:
   pull-request:
