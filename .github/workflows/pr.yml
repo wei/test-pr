@@ -13,6 +13,7 @@ jobs:
     - name: repo-sync
       uses: wei/pull-request@master
       env:
+        SOURCE_BRANCH: "feature-1"
         DESTINATION_BRANCH: "master"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      with:
