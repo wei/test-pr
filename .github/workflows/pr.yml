@@ -1,22 +1,17 @@
 on:
-  push:
-    branches:     # Matching branch pattern
-    - feature/*
-    - feature*
-    - feature-1
+  push
 
 jobs:
   pull-request:
     runs-on: ubuntu-latest
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
     - uses: actions/checkout@master
-    - name: repo-sync
-      uses: wei/pull-request@master
-      env:
-        DESTINATION_BRANCH: "master"
-        PR_TITLE: "Pulling ${{ github.ref }} into master"
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "pr-destination"
+        pr_title: "master -> pr-destination"
+        pr_reviewer: "wei"
+        pr_assignee: "wei"
+        pr_label: "test label"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
