@@ -11,7 +11,7 @@ jobs:
       with:
         destination_branch: "pr-destination"
         pr_title: "master -> pr-destination"
-        pr_reviewer: "wei"
-        pr_assignee: "wei"
+        pr_reviewer: "wei,worker"
+        pr_assignee: "wei,worker"
         pr_label: "test label"
         github_token: ${{ secrets.GITHUB_TOKEN }}
