@@ -15,4 +15,5 @@ jobs:
         pr_assignee: "wei"
         pr_label: "test label"
         pr_body: "## Haha!!"
+        pr_template: ".github/PULL_REQUEST_TEMPLATE.md"
         github_token: ${{ secrets.GITHUB_TOKEN }}
