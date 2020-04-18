@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
-        ref: $GITHUB_REF
+        ref: ${{ github.ref	}}
     - name: pull-request
       uses: repo-sync/pull-request@v2
       with:
