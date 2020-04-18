@@ -1,0 +1,16 @@
+name: Mirroring repository
+
+on: push
+
+jobs:
+  sync_repos:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: repo-sync
+      uses: wei/git-sync@master
+      env:
+        SOURCE_REPO: git@github.com:wei/test-pr.git
+        DESTINATION_REPO:  git@gitlab.com:wei/test-pr.git
+        SSH_PRIVATE_KEY:  ${{ secrets.SSH_PRIVATE_KEY }}
+      with:
+        args: $SOURCE_REPO ${GITHUB_REF##*/} $DESTINATION_REPO ${GITHUB_REF##*/}
