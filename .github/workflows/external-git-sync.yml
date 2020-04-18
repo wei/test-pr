@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - name: repo-sync
-      uses: wei/git-sync@master
+      uses: wei/git-sync@patch-1
       env:
         SOURCE_REPO: git@github.com:wei/test-pr.git
         DESTINATION_REPO:  git@gitlab.com:wei/test-pr.git
