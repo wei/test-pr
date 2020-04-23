@@ -7,18 +7,18 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - name: repo-sync
-      uses: wei/git-sync@patch-1
-      env:
-        SOURCE_REPO: git@github.com:wei/test-pr.git
-        DESTINATION_REPO:  git@gitlab.com:wei/test-pr.git
-        SSH_PRIVATE_KEY:  ${{ secrets.SSH_PRIVATE_KEY }}
+      uses: wei/git-sync@latest
       with:
-        args: $SOURCE_REPO ${GITHUB_REF##*/} $DESTINATION_REPO ${GITHUB_REF##*/}
+        source_repo: "wei/test-pr"
+        source_branch: "${GITHUB_REF##*/}"
+        destination_repo: "$DESTINATION_REPO"
+        destination_branch: "${GITHUB_REF##*/}"
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: repo-sync
-      uses: wei/git-sync@patch-1
-      env:
-        SOURCE_REPO: git@github.com:wei/test-pr.git
-        DESTINATION_REPO:  git@gitlab.com:wei/test-pr.git
-        SSH_PRIVATE_KEY:  ${{ secrets.SSH_PRIVATE_KEY }}
+      uses: wei/git-sync@latest
       with:
-        args: $SOURCE_REPO ${GITHUB_REF##*/} $DESTINATION_REPO ${GITHUB_REF##*/}
+        source_repo: "wei/test-pr"
+        source_branch: "${GITHUB_REF##*/}"
+        destination_repo: "$DESTINATION_REPO"
+        destination_branch: "${GITHUB_REF##*/}"
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
