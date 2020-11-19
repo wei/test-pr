@@ -1,0 +1,24 @@
+name: Mirroring repository
+
+on: push
+
+jobs:
+  sync_repos:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: repo-sync
+      uses: wei/git-sync@v2
+      with:
+        source_repo: "wei/test-pr"
+        source_branch: "${GITHUB_REF##*/}"
+        destination_repo: "git@gitlab.com:wei/test-pr.git"
+        destination_branch: "${GITHUB_REF##*/}"
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: repo-sync
+      uses: wei/git-sync@v2
+      with:
+        source_repo: "wei/test-pr"
+        source_branch: "${GITHUB_REF##*/}"
+        destination_repo: "git@gitlab.com:wei/test-pr.git"
+        destination_branch: "${GITHUB_REF##*/}"
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
