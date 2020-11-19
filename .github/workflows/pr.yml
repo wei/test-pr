@@ -5,13 +5,15 @@ jobs:
   pull-request:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - name: pull-request
-      uses: repo-sync/pull-request@v2
+      uses: repo-sync/pull-request@master
       with:
         destination_branch: "pr-destination"
         pr_title: "master -> pr-destination"
         pr_reviewer: "wei"
         pr_assignee: "wei"
         pr_label: "test label"
+        pr_body: "## Haha!!"
+        pr_template: ".github/PULL_REQUEST_TEMPLATE.md"
         github_token: ${{ secrets.GITHUB_TOKEN }}
