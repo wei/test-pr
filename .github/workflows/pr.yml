@@ -15,4 +15,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_body: >
           Line 1 \n
-          - [ ] test1"
+          - [ ] test1
