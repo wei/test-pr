@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - feature-1
+    - main
 
 jobs:
   pull-request:
@@ -13,6 +13,6 @@ jobs:
       with:
         destination_branch: "main"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_body: "
+        pr_body: >
           Line 1 \n
-          - [ ] "
+          - [ ] test1"
