@@ -15,6 +15,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_title: Test 1
         pr_body: |
-          A Line 1\n
-          B Line 2\n
+          A Line 1
+          B Line 2
           C Line 3
