@@ -13,6 +13,4 @@ jobs:
       with:
         destination_branch: "feature-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_body: >
-          Line 1 \n
-          - [ ] test1
+        pr_body: Line 1 \n test1
