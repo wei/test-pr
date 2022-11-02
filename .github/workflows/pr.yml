@@ -15,5 +15,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_title: Test 1
         pr_body: "
-          Line 1
+          Line 1\n
           test1"
