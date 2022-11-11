@@ -10,11 +10,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: pull-request
       uses: docker://ghcr.io/repo-sync/pull-request:v2
-      with:
-        destination_branch: "feature-2"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: Test 1
-        pr_body: |
+      env:
+        INPUT_DESTINATION_BRANCH: "feature-2"
+        INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        INPUT_PR_TITLE: Test 1
+        INPUT_PR_BODY: |
           A Line 1
           B Line 2
           C Line 3
