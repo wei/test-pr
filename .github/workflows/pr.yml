@@ -11,11 +11,12 @@ jobs:
     - name: pull-request
       uses: docker://ghcr.io/repo-sync/pull-request:v2
       env:
-        INPUT_DESTINATION_BRANCH: "feature-2"
-        INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        INPUT_PR_TITLE: Test 1
-        INPUT_PR_BODY: |
+      with:
+        destination_branch: "feature-2"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: Test 1
+        pr_body: |
           :crown: *An automated PR*
 
           Created by [repo-sync/pull-request](https://github.com/repo-sync/pull-request)
