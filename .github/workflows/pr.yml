@@ -9,11 +9,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: pull-request
-      uses: docker://ghcr.io/repo-sync/pull-request:v2.9-alpha.2
+      uses: repo-sync/pull-request@v2.9-alpha.2
       with:
         destination_branch: "feature-2"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: Test 1
+        pr_title: Test 2
         pr_body: |
           :crown: *An automated PR*
 
