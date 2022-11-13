@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: pull-request      
-      uses: docker://ghcr.io/repo-sync/pull-request:v2.8@sha256:cf4c56e7a11cb9eae670c2422d9ccb6fa87e34e2a7ceafe1270ad0be872c318e
+      uses: repo-sync/pull-request@2.9
       with:
         destination_branch: "feature-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
