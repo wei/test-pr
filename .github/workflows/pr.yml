@@ -9,13 +9,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: pull-request      
-      uses: repo-sync/pull-request@56c7500a996e98d4060defc10a2fc7bee586344f
+      uses: repo-sync/pull-request@5531f91f8baf554b48f6a5dabd87fe1d7b09db18
       with:
         destination_branch: "feature-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_title: Test 1
         pr_body: |
           :crown: *An automated PR*
-        debug: true
+        debug: "true"
 
           Created by [repo-sync/pull-request](https://github.com/repo-sync/pull-request)
