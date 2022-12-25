@@ -9,12 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: pull-request      
-      uses: repo-sync/pull-request@5531f91f8baf554b48f6a5dabd87fe1d7b09db18
+      uses: repo-sync/pull-request@5bf17d9fd6d0219baf937793be3b91ca47256c6a
       with:
         destination_branch: "feature-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_title: Test 1
-        debug: true
         pr_body: |
           :crown: *An automated PR*
 
