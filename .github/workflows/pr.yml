@@ -16,5 +16,6 @@ jobs:
         pr_title: Test 1
         pr_body: |
           :crown: *An automated PR*
+        debug: true
 
           Created by [repo-sync/pull-request](https://github.com/repo-sync/pull-request)
