@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: pull-request      
-      uses: repo-sync/pull-request@a151d31c9abc0de1ec3d48ab90fd2b2aad67c055
+      uses: repo-sync/pull-request@c571d458b2a9ba25ea82a839a5d98cba9a26a6e1
       with:
         destination_branch: "feature-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
