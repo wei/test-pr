@@ -14,8 +14,8 @@ jobs:
         destination_branch: "feature-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_title: Test 1
+        debug: "true"
         pr_body: |
           :crown: *An automated PR*
-        debug: "true"
 
           Created by [repo-sync/pull-request](https://github.com/repo-sync/pull-request)
