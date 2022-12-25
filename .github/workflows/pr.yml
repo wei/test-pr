@@ -7,12 +7,14 @@ jobs:
   pull-request:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: pull-request
-      uses: repo-sync/pull-request@v2
+    - uses: actions/checkout@v3
+    - name: pull-request      
+      uses: repo-sync/pull-request@v2.11
       with:
-        destination_branch: "main"
+        destination_branch: "feature-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_body: >
-          Line 1 \n
-          - [ ] test1"
+        pr_title: Test 1
+        pr_body: |
+          :crown: *An automated PR*
+
+          Created by [repo-sync/pull-request](https://github.com/repo-sync/pull-request)
